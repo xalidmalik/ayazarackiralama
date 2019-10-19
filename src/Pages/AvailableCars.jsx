@@ -8,12 +8,19 @@ class AvailableCars extends Component {
     startDateTime: localStorage.getItem("startDate"),
     endDateTime: localStorage.getItem("endDate")
   };
+
   componentDidMount() {
+    console.log("bb");
     if (!this.props.availableCar || this.props.availableCar == undefined) {
       let beginDate = localStorage.getItem("startDate");
       let endDate = localStorage.getItem("endDate");
       this.props.fetchAvailableCars(beginDate, endDate);
     }
+  }
+
+  componentDidUpdate(prevProps) {
+    localStorage.setItem("startDate", this.state.startDateTime);
+    localStorage.setItem("endDate", this.state.endDateTime);
   }
 
   render() {
