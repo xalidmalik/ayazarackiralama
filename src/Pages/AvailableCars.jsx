@@ -14,7 +14,6 @@ class AvailableCars extends Component {
       let beginDate = localStorage.getItem("startDate");
       let endDate = localStorage.getItem("endDate");
       this.props.fetchAvailableCars(beginDate, endDate);
-      alert("availabledeyim");
     }
   }
 
