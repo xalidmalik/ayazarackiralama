@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@routeax/thecaraxapiproxy": "^0.2.7",
+    "@routeax/thecaraxapiproxy": "^0.3.4",
     "@sweetalert2/theme-borderless": "^2.2.1",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
