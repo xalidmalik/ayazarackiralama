@@ -5,6 +5,7 @@ import InputWrapper from "../Inputs/InputWrapper";
 import withRedux from "../../../Hoc/withRedux";
 import moment from "moment";
 import { AlertSwal } from "../../../Helpers/Alert";
+import Swal from "sweetalert2";
 
 const shema = yup.object().shape({
   name: yup.string().required("İsim girmeniz gerekiyor"),
@@ -57,11 +58,7 @@ class CustomerForm extends Component {
       !reservationCreateIsLoading &&
       reservationCreate
     ) {
-      alert("selam");
-      AlertSwal(
-        "Kayıdınız başarıyla oluşturulmuştur. En kısa sürede sizinle iletişime geçilecektir.",
-        "success"
-      );
+      Swal.fire("Başarılı!", "Rezervasyon kaydınız oluşturuldu en kısa sürede sizinle iletişime geçilecektir", "success");
     }
   }
 

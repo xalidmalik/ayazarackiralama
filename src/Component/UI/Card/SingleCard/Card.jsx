@@ -12,7 +12,6 @@ class Card extends Component {
 
   render() {
     const { Cars } = this.props;
-
     return (
       <>
         <div className="card mb-3 shadow-sm">

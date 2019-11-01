@@ -26,8 +26,8 @@ class DatePicker extends Component {
   };
 
   componentDidUpdate() {
-    this.props.endDate(this.state.fetchStart);
-    this.props.startDate(this.state.fetchEnd);
+    this.props.endDate && this.props.endDate(this.state.fetchStart);
+    this.props.startDate && this.props.startDate(this.state.fetchEnd);
   }
 
   render() {

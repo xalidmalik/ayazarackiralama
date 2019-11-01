@@ -10,17 +10,23 @@ class AvailableCars extends Component {
   };
 
   componentDidMount() {
-    console.log("bb");
     if (!this.props.availableCar || this.props.availableCar == undefined) {
       let beginDate = localStorage.getItem("startDate");
       let endDate = localStorage.getItem("endDate");
       this.props.fetchAvailableCars(beginDate, endDate);
+      alert("availabledeyim");
     }
   }
 
   componentDidUpdate(prevProps) {
-    localStorage.setItem("startDate", this.state.startDateTime);
-    localStorage.setItem("endDate", this.state.endDateTime);
+    const { startDateTime, endDateTime } = this.state;
+
+    if (startDateTime) {
+      localStorage.setItem("startDate", startDateTime);
+    }
+    if (endDateTime) {
+      localStorage.setItem("endDate", endDateTime);
+    }
   }
 
   render() {
@@ -35,6 +41,7 @@ class AvailableCars extends Component {
                     <div className="p-3">
                       <DatePicker
                         openDirection="down"
+                        bt={this.state.startDateTime}
                         startDate={value => {
                           if (value != this.state.startDateTime) {
                             this.setState({ startDateTime: value });

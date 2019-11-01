@@ -3,12 +3,10 @@ import moment from "moment";
 
 const CardPrice = props => {
   const { Cars } = props;
-
   const Days = () => {
     let beginDate = localStorage.getItem("startDate");
     let endDate = localStorage.getItem("endDate");
     let diff = moment(beginDate).diff(endDate, "day");
-
     if (diff == 0) {
       return 1;
     }
@@ -16,7 +14,6 @@ const CardPrice = props => {
     if (moment(beginDate).hours() < moment(endDate).hours()) {
       return diff + 1;
     }
-
     return diff;
   };
   return (
